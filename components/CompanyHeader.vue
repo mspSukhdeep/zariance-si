@@ -1,0 +1,100 @@
+<template>
+  <div class="company-head columns">
+    <div class="column is-1">
+      <img
+        class="company-head__img"
+        src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Microsoft-512.png"
+      >
+    </div>
+    <div class="column is-8">
+      <div class="company-head__name">Microsoft Corporation</div>
+      <div class="company-head__domain">Technology company</div>
+      <div
+        class="company-head__description"
+      >Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports and sells computer software, consumer electronics, personal computers, and related services.</div>
+    </div>
+    <div class="column is-3">
+      <div class="company-head__info-wrapper">
+        <!-- <div class="company-head__info">
+          <span class="icon is-small is-left">
+            <i class="material-icons md-24">face</i>
+          </span>
+          <span class="company-head__info-val">100,000+ employees</span>
+        </div> -->
+        <a class="company-head__info" target="_blank" href="https://www.microsoft.com/">
+          <span class="icon is-small is-left">
+            <i class="material-icons md-24">link</i>
+          </span>
+          <span class="company-head__info-val">www.microsoft.com</span>
+        </a>
+        <a class="company-head__info" target="_blank" href="https://fb.com/Microsoft">
+          <span class="icon is-small is-left">
+                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }" />
+          </span>
+          <span class="company-head__info-val">fb.com/microsoft</span>
+        </a>
+        <a class="company-head__info" target="_blank" href="https://twitter.com/Microsoft">
+          <span class="icon is-small is-left">
+                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter' }" />
+          </span>
+          <span class="company-head__info-val">twitter.com/microsoft</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  name: "CompanyHeader"
+};
+</script>
+<style lang="sass">
+$color-primary: #2196f3
+$color-white: #fff
+$color-text-1: #111
+$color-text-2: #444
+$color-text-3: #666
+$box-shadow: 0 1px 6px 1px rgba(92,78,62,.28)
+
+$font-size-2xl: 22px
+$font-size-s: 14px
+
+.company
+    &-head
+        margin: 10px 0
+        padding: 10px
+        color: $color-text-1
+        box-shadow: $box-shadow
+        border-radius: 4px
+        display: flex
+        &__img
+            max-height: 72px
+            max-width: 72px
+        &__name
+            font-size: $font-size-2xl
+            line-height: 1
+            font-weight: 500
+        &__domain
+            color: $color-text-3
+            font-size: $font-size-s
+            margin-top: 5px
+            font-weight: 300
+
+        &__description
+            margin-top: 10px
+            color: $color-text-2
+        
+        &__info
+            list-style-type: none
+            display: block
+            &-wrapper
+                color: $color-text-2
+                margin-left: 40px
+            .icon
+                vertical-align: middle
+            &-val
+                vertical-align: middle
+                margin-left: 5px
+            & + &
+                margin-top: 5px
+</style>
