@@ -3,15 +3,17 @@
     <div class="column is-1">
       <img
         class="company-head__img"
-        src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Microsoft-512.png"
+        src="https://logo.clearbit.com/taboola.com"
       >
     </div>
     <div class="column is-8">
-      <div class="company-head__name">Microsoft Corporation</div>
-      <div class="company-head__domain">Technology company</div>
+      <div class="company-head__name">Taboola</div>
+      <div class="company-head__domain">Targeted Advertising Service</div>
       <div
         class="company-head__description"
-      >Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports and sells computer software, consumer electronics, personal computers, and related services.</div>
+      >
+      Taboola is a content marketing platform that provides a web widget to content creators on their website to show related ads.
+      </div>
     </div>
     <div class="column is-3">
       <div class="company-head__info-wrapper">
@@ -19,27 +21,33 @@
           <span class="icon is-small is-left">
             <i class="material-icons md-24">link</i>
           </span>
-          <span class="company-head__info-val">www.microsoft.com</span>
+          <span class="company-head__info-val">www.taboola.com</span>
         </a>
-        <a class="company-head__info" target="_blank" href="https://fb.com/Microsoft">
+        <div class="company-head__info" target="_blank">
           <span class="icon is-small is-left">
-                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }" />
+                <Icon :icon="{'type': 'material', 'name': 'get_app'}" />
           </span>
-          <span class="company-head__info-val">MicrosoftWeb</span>
-        </a>
-        <a class="company-head__info" target="_blank" href="https://twitter.com/Microsoft">
+          <span class="company-head__info-val">100,000+ installs</span>
+        </div>
+        <div class="company-head__info" target="_blank">
           <span class="icon is-small is-left">
-                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter' }" />
+                <Icon :icon="{'type': 'material', 'name': 'attach_money'}" />
           </span>
-          <span class="company-head__info-val">Microsoft</span>
-        </a>
+          <span class="company-head__info-val">Subscription based</span>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import Icon from './Icon';
+
 export default {
-  name: "CompanyHeader"
+  name: "TechnologyHeader",
+  components: {
+    Icon
+  }
+
 };
 </script>
 <style lang="sass">

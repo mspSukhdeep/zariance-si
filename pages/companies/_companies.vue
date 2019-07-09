@@ -3,7 +3,7 @@
         <div class="container">
             <CompanyHeader />
             <PillNavigation :route="navigation" />
-            <NuxtChild :key="$route.params.company" />
+            <NuxtChild :key="$route.params.companies" />
         </div>
     </div>
 </template>
@@ -18,26 +18,25 @@ export default {
         PillNavigation
     },
     name: 'CompanyPage',
+    created(){
+        this.$store.dispatch('company/fetchCompanyInfo', {
+            companyName: this.companyName
+        });
+    },
     computed: {
         navigation(){
             return this.subRoutes.map(route=>{
-                route.link = `/${this.companyName}/${route.component}`;
-                let componentPath = this.$route.name.split("-")[0];
-                if(route.component){
-                    componentPath += `-${route.component}`;
-                }
-                route.isActive = componentPath===this.$route.name?true:false;
-                route.componentPath = componentPath;
+                route.link = `/companies/${this.companyName}/${route.component}`;
                 return route;
             })
         }
     },
     data: function(){
         return{
-            companyName: this.$route.params.company,
+            companyName: this.$route.params.companies,
             subRoutes: [
                 {
-                    label: 'Overview',
+                    label: 'Business Profile',
                     component: ''
                 },
                 {

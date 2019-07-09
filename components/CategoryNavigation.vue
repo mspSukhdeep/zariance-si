@@ -1,6 +1,7 @@
 <template>
     <nuxt-link class="nav-item" :class="{'nav-item--active': nav.isActive}" :to="nav.link">
-        <div class="nav-item__icon" v-html="nav.icon">
+        <div class="nav-item__icon">
+            <Icon :icon="nav.icon" />
         </div>
         <span class="nav-item__label">
             {{nav.label}}
@@ -9,9 +10,14 @@
 </template>
 
 <script>
+import Icon from './Icon';
+
 export default {
-    name: 'NewsNavigation',
-    props: ['nav']
+    name: 'CategoryNavigation',
+    props: ['nav'],
+    components: {
+        Icon
+    }
 }
 </script>
 

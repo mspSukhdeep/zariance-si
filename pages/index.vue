@@ -1,36 +1,38 @@
 <template>
-  <div class="container home">
-    <div>
-      <h1 class="title">
-        Zariance Intel
-      </h1>
-      <Search />
-      <h2 class="subtitle">
-        Zariance Sales Intelligence
-      </h2>
+  <div>
+    <div class="container home">
+      <div>
+        <div class="logo-wrpr">
+          <img class="logo" src="https://assets.mspimages.in/zariance/intel/zariance_intel.svg">
+        </div>
+        <Search/>
+        <h2 class="subtitle">Sales Intelligence</h2>
+      </div>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import style from '~/assets/style/index.sass'
-import Search from '~/components/Search.vue'
+import style from "~/assets/style/index.sass";
+import Search from "~/components/Search.vue";
+import Footer from "~/components/Footer.vue";
 
 export default {
   components: {
-    Search
+    Search,
+    Footer
   }
-}
+};
 </script>
 
 <style>
-
-.home{
+.home {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   display: flex;
-  text-align: center
+  text-align: center;
 }
 .title {
   display: block;
@@ -42,7 +44,7 @@ export default {
 
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
+  font-size: 24px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 30px;
@@ -55,6 +57,8 @@ export default {
 </style>
 
 <style lang="sass">
-body
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
+.logo
+  width: 300px
+  &-wrpr
+    margin-bottom: 10px
 </style>

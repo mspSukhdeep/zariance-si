@@ -13,6 +13,27 @@
     <div class="segment columns">
       <div class="column is-9">
         <div class="segment">
+          <div class="segment-title">Microsoft's Financial Status</div>
+          <div class="segment-body columns">
+            <div
+              class="metric metric--alt column is-3"
+              v-for="(metric, index) in financeMetrics"
+              :key="index"
+            >
+              <div class="metric__inr">
+                <div class="metric__value">{{metric.value}}</div>
+                <div class="metric__key">{{metric.key}}</div>
+              </div>
+              <div class="metric__indicator-wrapper" :class="{'metric__indicator-wrapper--red': index==2}">
+                <Icon :icon="metric.icon"></Icon>
+                <div class="metric__indicator-value">
+                  {{ metric.change }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="segment">
           <div class="segment-title">Microsoft Funding History</div>
           <div
             class="segment-text"
@@ -69,6 +90,7 @@ import InvestmentChart from "~/components/InvestmentChart";
 import InvestmentTable from "~/components/InvestmentTable";
 import CompetitorBox from "~/components/CompetitorBox";
 import AquisitionBox from "~/components/AquisitionBox";
+import Icon from "~/components/Icon";
 
 export default {
   components: {
@@ -77,21 +99,61 @@ export default {
     InvestmentChart,
     InvestmentTable,
     CompetitorBox,
-    AquisitionBox
+    AquisitionBox,
+    Icon
   },
-//   created() {
-//     window.addEventListener("scroll", this.handleScroll);
-//   },
-//   destroyed() {
-//     window.removeEventListener("scroll", this.handleScroll);
-//   },
+  created() {
+    
+  },
   methods: {
-      handleScroll(e){
-          console.log(e);
-      }
+    handleScroll(e) {
+      console.log(e);
+    }
   },
   data: function() {
     return {
+      financeMetrics: [
+        {
+          key: "Revenue",
+          value: "$110.84 Bn",
+          icon: {
+            type: 'material',
+            name: 'trending_up',
+            class: "metric__indicator",
+          },
+          change: "3.2%"
+        },
+        {
+          key: "Operating Income",
+          value: "$35.05 Bn",
+          icon: {
+            type: 'material',
+            name: 'trending_up',
+            class: "metric__indicator"
+          },
+          change: "1.9%"
+        },
+        {
+          key: "Net Income",
+          value: "$16.57 Bn",
+          icon: {
+            type: 'material',
+            name: 'trending_down',
+            class: "metric__indicator"
+          },
+          change: "-1.8%"
+        },
+        {
+          key: "Assets",
+          value: "$284.84 Bn",
+          icon: {
+            type: 'material',
+            name: 'trending_up',
+            class: "metric__indicator"
+          },
+          change: "4.4%"
+        }
+      ],
       metrics: [
         {
           key: "Website Traffic",
@@ -282,6 +344,8 @@ export default {
 </script>
 
 <style lang="sass">
+$box-shadow: 0 1px 6px 1px rgba(92,78,62,.28)
+
 .overview
     margin-top: 30px
     &-graph
@@ -297,6 +361,7 @@ export default {
 
 .metric
     text-align: left
+    position: relative
     &__icon
         font-size: 30px
         width: 30px
@@ -316,6 +381,27 @@ export default {
     &__value
         display: inline-block
         width: 100%
+    &__indicator
+      line-height: 1
+      &-value
+        font-weight: 500
+      &-wrapper
+        position: absolute
+        top: 17px
+        right: 17px
+        font-size: 10px
+        line-height: 1
+        color: #00877a
+        &--red
+          color: #c00
+    &--alt
+      .metric
+        &__inr
+          box-shadow: $box-shadow
+          border-radius: 8px
+          padding: 10px
+        &__key
+          margin-top: 3px
 
 .sidebar
     &-item

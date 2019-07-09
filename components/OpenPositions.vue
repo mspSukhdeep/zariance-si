@@ -26,9 +26,12 @@
                       {{position.experience}}
                   </span>
               </div>
-              <a target="_blank" class="position__link" :href="position.link">
-                  Apply Now
-              </a>
+              <div class="position__source">
+                Source:
+                <a target="_blank" class="position__link" :href="position.link">
+                    Indeed
+                </a>
+              </div>
           </div>
       </div>
     </div>
@@ -59,15 +62,13 @@ export default {
         position: relative
         & + &
             border-top: 1px solid #dfe1e8
-    &__link
+    &__source
         position: absolute
         right: 12px
         bottom: 12px
-        font-weight: 500
-        border: 1px solid #444
-        border-radius: 4px
-        padding: 6px 8px
         line-height: 1
-        &:hover
-            border-color: #3273dc
+    &__link
+        color: #3273dc
+        font-weight: 500
+
 </style>

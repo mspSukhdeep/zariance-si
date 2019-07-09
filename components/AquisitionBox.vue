@@ -38,7 +38,6 @@ export default {
 $box-shadow: 0 1px 6px 1px rgba(92,78,62,.28)
 
 .aquisition
-    // box-shadow: $box-shadow
     border-radius: 5px
     margin: 0
     padding: 15px

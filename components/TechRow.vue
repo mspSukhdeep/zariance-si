@@ -1,6 +1,6 @@
 <template>
   <div class="tech columns is-marginless">
-    <div class="tech__img-wrpr column is-2" :style="{background: tech.color}">
+    <div class="tech__img-wrpr column is-3" :style="{background: tech.color}">
       <div class="tech__img-wrpr-inr">
         <img
           class="tech__img"
@@ -8,7 +8,7 @@
         >
       </div>
     </div>
-    <div class="tech__info column is-10">
+    <div class="tech__info column is-9">
       <div class="tech__name">{{tech.name}}</div>
       <div
         class="tech__description"

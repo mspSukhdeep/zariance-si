@@ -1,5 +1,12 @@
 
 export default {
+  server: {
+    port: 3000,
+    host: '127.0.0.1',
+  },
+  router: {
+    base: '/si/'
+  },
   mode: 'universal',
   /*
   ** Headers of the page
@@ -64,6 +71,7 @@ export default {
   /*
   ** Build configuration
   */
+  buildDir: '_nuxt',
   build: {
     postcss: {
       plugins: {

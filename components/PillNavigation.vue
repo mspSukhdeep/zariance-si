@@ -32,7 +32,7 @@ export default {
         background-color: #fafafa
         color: #5f6368
         text-decoration: none
-    &--active
+    &.nuxt-link-exact-active
         box-shadow: 0 1px 3px 1px rgba(60, 64, 67, 0.15), 0 1px 2px 0 rgba(60, 64, 67, 0.3)
         color: #1a73e8
         
