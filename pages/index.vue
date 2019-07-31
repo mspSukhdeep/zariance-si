@@ -5,8 +5,11 @@
         <div class="logo-wrpr">
           <img class="logo" src="https://assets.mspimages.in/zariance/intel/zariance_intel.svg">
         </div>
-        <Search/>
         <h2 class="subtitle">Sales Intelligence</h2>
+        <Search/>
+        <nuxt-link to="/list" class="link">
+            Explore Companies
+        </nuxt-link>
       </div>
     </div>
     <Footer/>
@@ -42,13 +45,13 @@ export default {
   letter-spacing: 1px;
 }
 
-.subtitle {
+h2.subtitle {
   font-weight: 300;
   font-size: 24px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 30px;
-  margin-top: 30px;
+  margin: 0 !important
 }
 
 .links {
@@ -61,4 +64,6 @@ export default {
   width: 300px
   &-wrpr
     margin-bottom: 10px
+.link
+  color: #3273dc
 </style>

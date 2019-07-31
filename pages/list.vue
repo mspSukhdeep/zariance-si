@@ -1,9 +1,15 @@
 <template>
   <div class="container">
-    <div class="section">
+    <div class="section" v-if="!meta.isLocal">
       <div class="columns is-multiline">
-        <h1 class="section__title column is-12">List Page Title</h1>
-        <div class="filter-bar column is-12" v-if="queryParam">
+        <h1 class="section__title column is-12">Zariance Sales Intelligence - Prospect Explorer</h1>
+        <div class="filter-bar column is-12">
+          <div class="filter-bar__item">
+              <span class="filter-bar__title">Total Records: </span>
+              <span
+                class="filter-bar__option filter-bar__option--nc"
+              >{{companies.meta.totalRecords.toLocaleString()}}</span>
+            </div>
           <template v-for="(filterGroup, index) in namedSelectedFilters">
             <div class="filter-bar__item" :key="index" v-if="filterGroup.options.length>0">
               <span class="filter-bar__title">{{filterGroup.label}}</span>
@@ -57,15 +63,25 @@
                 <FallbackIcon v-else :chars="company.name" />
               </div>
               <div class="company-item__info column is-11">
-                <div class="company-item__name">{{company.name}}</div>
+                <div class="company-item__name is-capitalized">{{company.name}}</div>
                 <div class="company-item__description">{{company.description}}</div>
-                <div class="company-item__kvp">
-                  <div class="company-item__kvp-key">
+                <div class="company-item__kvp columns is-multiline">
+                  <div
+                    class="company-item__kvp-key column is-6"
+                    v-if="company.url"
+                  >
+                    Website:
+                    <a :href="'http://'+company.url"
+                        target="_blank"
+                      class="company-item__kvp-link has-text-weight-medium"
+                    >{{company.url}}</a>
+                  </div>
+                  <div class="company-item__kvp-key column is-6">
                     Traffic:
                     <span class="has-text-weight-medium">{{millify(company.month_6)}}</span>
                   </div>
                   <div
-                    class="company-item__kvp-key"
+                    class="company-item__kvp-key column is-6"
                     v-if="company.hq_location && company.hq_location.location"
                   >
                     Headquarters:
@@ -73,11 +89,20 @@
                       class="has-text-weight-medium"
                     >{{company.hq_location.location}}</span>
                   </div>
+                  <div
+                    class="company-item__kvp-key column is-6"
+                    v-if="company.foundation_year"
+                  >
+                    Year Founded:
+                    <span
+                      class="has-text-weight-medium"
+                    >{{company.foundation_year}}</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="segment-body paginate">
+          <div class="segment-body paginate" v-if="!meta.isLocal">
             <template v-for="(item, index) in pagination">
               <div class="paginate-separator" :key="index+'sp'" v-if="showSeperator(index)">...</div>
               <div
@@ -85,11 +110,14 @@
                 :class="{'paginate-item--disabled':item.isCurrentPage}"
                 @click="navigateToPage(item.index)"
                 :key="index"
-              >{{item.index}}</div>
+              >{{item.index.toLocaleString()}}</div>
             </template>
           </div>
         </div>
       </div>
+    </div>
+    <div class="section" v-else>
+        <div class="section__big-title">Loading...</div>
     </div>
   </div>
 </template>
@@ -110,10 +138,15 @@ export default {
   },
   watch: {},
   computed: {
+    meta() {
+      return this.$store.state.list.meta;
+    },
     pagination() {
-      const totalRecords = 2300,
-        currentPage = 3,
-        pageSize = 20,
+      const totalRecords = this.companies.meta.totalRecords,
+        pageSize = this.companies.meta.pageSize,
+        currentPage = Math.ceil(
+          (this.companies.meta.currentIndex + 1) / this.companies.meta.pageSize
+        ),
         pageCount = Math.ceil(totalRecords / pageSize);
 
       const paginationSet = new Set([1, pageCount]);
@@ -226,6 +259,14 @@ export default {
     this.loadData();
   },
   methods: {
+    navigateToPage: function(pageIndex){
+      this.selectedFilters = _.extend(_.cloneDeep(this.selectedFilters), {page: pageIndex})
+      this.loadNewData();
+    },
+    loadNewData: function(){
+      this.$router.push("?" + this.queryParam);
+      this.loadData();
+    },
     searchFilter: function(filter) {
       this.$store.commit("list/updateSearchTerm", filter);
     },
@@ -334,7 +375,9 @@ export default {
   },
   data: function() {
     return {
-      selectedFilters: {}
+      selectedFilters: {
+        page: 0
+      }
     };
   }
 };
@@ -370,6 +413,9 @@ export default {
           width: 16px
           font-size: 18px
           margin-left: 3px
+        &--nc
+          &:after
+            display: none
               
 
     &-title
@@ -585,6 +631,12 @@ $box-shadow: 0 1px 6px 1px rgba(92,78,62,.28)
         font-size: 14px
         font-weight: 300
         margin-top: 10px
+        &-key
+          padding: 3px 12px
+        &-link
+          color: #3273dc
+          &:hover
+            text-decoration: underline
     &__description
         color: #666 
         font-weight: 300
@@ -606,8 +658,8 @@ $box-shadow: 0 1px 6px 1px rgba(92,78,62,.28)
   &-item
     border: 1px solid #444
     color: #444
-    width: 35px
-    padding: 3px 0
+    min-width: 35px
+    padding: 3px 8px
     text-align: center
     border-radius: 3px
     display: inline-block
@@ -623,4 +675,9 @@ $box-shadow: 0 1px 6px 1px rgba(92,78,62,.28)
       background: #f2f3f5
       border-color: #999
       color: #666
+
+.section__big-title
+  text-align: center
+  font-size: 30px
+  margin-top: 100px
 </style>

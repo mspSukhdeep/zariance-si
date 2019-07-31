@@ -8,7 +8,9 @@ const CONFIG = {
 export const state = () => ({
   companies: {
     data: [],
-    meta: {}
+    meta: {
+      totalRecords: 0
+    }
   },
   filters: [],
   meta: {
@@ -22,8 +24,13 @@ export const mutations = {
   updateCompanies(state, payload) {
     state.companies.data = payload.companies;
     state.companies.meta = {
-      currentPage: payload.currentPage,
-      totalPages: payload.totalRecords
+      currentIndex: payload.from,
+      totalRecords: payload.total,
+      pageSize: payload.size
+    }
+    state.meta = {
+      isLocal: false,
+      lastRefreshTime: Date.now()
     }
   },
   updateFilters(state, payload) {
@@ -40,7 +47,7 @@ export const mutations = {
   },
   updateSearchTerm(state, payload) {
     state.filters = state.filters.map(filter => {
-      if (filter.name === payload.name) {
+      if (filter.label === payload.label) {
         filter.search = payload.search
       }
       return filter;
