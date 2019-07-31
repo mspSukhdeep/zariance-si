@@ -35,49 +35,46 @@
 <script>
 import HorizontalBar from "./HorizontalBarChart.js";
 
+const TeamIcon = {
+  iconSet: {
+    engineering: `build`,
+    sales: 'shopping_cart',
+    support: 'contact_mail',
+    operations: 'directions_run',
+    product: 'extension',
+    marketing: 'screen_share',
+    default: 'contact_mail'
+  },
+  get: function(propName) {
+    return this.iconSet[propName.toLowerCase()] || this.iconSet["default"];
+  }
+};
+
 export default {
   components: {
     HorizontalBar
   },
+  computed: {
+    teamtable: function() {
+      let totalSize = 0;
+      const teams = this.teams.map(team=>{
+        totalSize += team.size;
+        team.icon = TeamIcon.get(team.department);
+        return team;
+      });
+      teams.push({
+          department: 'Total',
+          size: totalSize,
+          isImportant: true
+      });
+
+      return teams;
+    }
+  },
+  props: ['teams'],
   data() {
     return {
-      teams: [
-        {
-          department: 'Engineering',
-          size: 21332,
-          icon: 'build'
-        },
-        {
-          department: 'Sales',
-          size: 8042,
-          icon: 'shopping_cart'
-        },
-        {
-          department: 'Support',
-          size: 32349,
-          icon: 'contact_mail'
-        },
-        {
-          department: 'Operations',
-          size: 28043,
-          icon: 'directions_run'
-        },
-        {
-          department: 'Product',
-          size: 12994,
-          icon: 'extension'
-        },
-        {
-          department: 'Marketing/Growth',
-          size: 14932,
-          icon: 'screen_share'
-        },
-        {
-          department: 'Total',
-          size: 117692,
-          isImportant: true
-        },
-      ],
+      isLocal: true,
       datacollection: {},
       chartOptions: {
         responsive: true,
@@ -110,8 +107,14 @@ export default {
       }
     };
   },
-  mounted() {
-    this.fillData();
+  created(){
+      this.fillData();
+  },
+  updated(){
+    if(this.isLocal){
+      this.isLocal = false;
+      this.fillData();
+    }
   },
   methods: {
     formatNumber: function(n) {
@@ -128,19 +131,12 @@ export default {
     },
     fillData() {
       this.datacollection = {
-        labels: [
-          "Engineering",
-          "Sales",
-          "Support",
-          "Operations",
-          "Product",
-          "Marketing / Growth"
-        ],
+        labels: this.teams.map(team=>team.department),
         datasets: [
           {
             label: "Employee count by teams",
             backgroundColor: "rgba(27, 114, 233, .5)",
-            data: [21332, 8042, 32349, 28043, 12994, 14932]
+            data: this.teams.map(team=>team.size)
           }
         ]
       };

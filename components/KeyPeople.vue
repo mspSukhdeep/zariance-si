@@ -19,38 +19,34 @@
                   type="text"
                   placeholder="Search Employees"
                   v-model="searchTerm"
-                >
+                />
               </div>
             </div>
           </tr>
           <tr v-for="(person, index) in filteredPeople" :key="index">
             <td>
               <div v-if="person.image" class="person__img-wrpr">
-                <img class="person__img" :src="person.image">
+                <img class="person__img" :src="person.image" />
               </div>
               <div v-else class="person__gravator">{{person.name[0]}}</div>
               <span class="person__name">{{person.name}}</span>
             </td>
-            <td>{{person.position}}</td>
+            <td style="width: 360px">{{person.position}}</td>
             <td>
               <div>
-                <a
+                <!-- <a
                   target="blank"
                   :href="'mailto('+person.contact.email+')'"
                   class="hr__contact-item"
                 >
                   <i class="hr__contact-icon material-icons md-24">email</i>
                   <span class="hr__contact-value">{{person.contact.email}}</span>
-                </a>
-                <a
-                  target="_blank"
-                  class="hr__contact-item"
-                  :href="'https://www.linkedin.com/in/'+person.contact.linkedin"
-                >
+                </a>-->
+                <a target="_blank" class="hr__contact-item" :href="person.link">
                   <span class="hr__contact-icon hr__contact-icon--fix icon is-small is-left">
-                    <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'linkedin-in' }"/>
+                    <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'linkedin-in' }" />
                   </span>
-                  <span class="hr__contact-value">{{person.contact.linkedin}}</span>
+                  <span class="hr__contact-value">{{santizedLink(person.link)}}</span>
                 </a>
               </div>
             </td>
@@ -62,29 +58,39 @@
 </template>
 
 <script>
+var url = require("url");
+
 export default {
   name: "KeyPeople",
   props: ["people"],
   computed: {
-      filteredPeople: function(){
-          return this.people.filter(person=>{
-              return this.isMatch([person.name, person.position], this.searchTerm)?true:false
-        })
-      }
+    filteredPeople: function() {
+      return this.people.filter(person => {
+        return this.isMatch([person.name, person.position], this.searchTerm)
+          ? true
+          : false;
+      });
+    }
   },
   methods: {
-      isMatch: function(values=[], subString=""){
-          subString = subString.toLowerCase();
-            let isMatch = false;
-            
-            for(let i=0;i<values.length;i++){
-                let value = values[i].toLowerCase();
-                if(value.indexOf(subString) > -1){
-                    isMatch = true;
-                    break;
-                }
-            }
-        return isMatch;
+    santizedLink: function(link) {
+      let parsedLink = url.parse(link),
+        parsedLinkParts = parsedLink.pathname.split("/");
+        return parsedLinkParts.slice(2).join("/");
+      // return parsedLinkParts[parsedLinkParts.length - 1];
+    },
+    isMatch: function(values = [], subString = "") {
+      subString = subString.toLowerCase();
+      let isMatch = false;
+
+      for (let i = 0; i < values.length; i++) {
+        let value = values[i].toLowerCase();
+        if (value.indexOf(subString) > -1) {
+          isMatch = true;
+          break;
+        }
+      }
+      return isMatch;
     }
   },
   data: function() {

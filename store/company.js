@@ -5,7 +5,19 @@ const CONFIG = {
 };
 
 export const state = () => ({
-    data: {},
+    data: {
+        basic: {
+          keypeople: []
+        },
+        tech: {},
+        hr: {
+          teams: []
+        },
+        business: {
+          topMetrics: [],
+          financialMetrics: []
+        }
+    },
     meta: {
         isLocal: true,
         lastRefreshTime: Date.now()

@@ -3,25 +3,25 @@
     <div class="column is-1">
       <img
         class="company-head__img"
-        src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Microsoft-512.png"
-      >
+        :src="company.logo || 'https://logo.clearbit.com/'+company.url"
+      />
     </div>
     <div class="column is-8">
-      <div class="company-head__name">Microsoft Corporation</div>
-      <div class="company-head__domain">Technology company</div>
-      <div
-        class="company-head__description"
-      >Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports and sells computer software, consumer electronics, personal computers, and related services.</div>
+      <div class="company-head__name">{{company.name}}</div>
+      <!-- <div class="company-head__domain">Technology company</div> -->
+      <!-- <div class="company-head__description">
+        Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports and sells computer software, consumer electronics, personal computers, and related services.</div>
+      -->
     </div>
     <div class="column is-3">
       <div class="company-head__info-wrapper">
-        <a class="company-head__info" target="_blank" href="https://www.microsoft.com/">
+        <a class="company-head__info" target="_blank" :href="company.url">
           <span class="icon is-small is-left">
             <i class="material-icons md-24">link</i>
           </span>
-          <span class="company-head__info-val">www.microsoft.com</span>
+          <span class="company-head__info-val">{{company.url}}</span>
         </a>
-        <a class="company-head__info" target="_blank" href="https://fb.com/Microsoft">
+        <!-- <a class="company-head__info" target="_blank" href="https://fb.com/Microsoft">
           <span class="icon is-small is-left">
                 <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'facebook' }" />
           </span>
@@ -32,14 +32,15 @@
                 <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter' }" />
           </span>
           <span class="company-head__info-val">Microsoft</span>
-        </a>
+        </a>-->
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "CompanyHeader"
+  name: "CompanyHeader",
+  props: ["company"]
 };
 </script>
 <style lang="sass">
@@ -55,15 +56,18 @@ $font-size-s: 14px
 
 .company
     &-head
+        border-bottom: 1px solid #dfe1e8
+        border-radius: 0
         margin: 10px 0
         padding: 10px
         color: $color-text-1
-        box-shadow: $box-shadow
         border-radius: 4px
         display: flex
+        align-items: center
         &__img
-            max-height: 72px
-            max-width: 72px
+            max-height: 48px
+            max-width: 48px
+            display: block
         &__name
             font-size: $font-size-2xl
             line-height: 1

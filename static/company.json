@@ -1,0 +1,117 @@
+{
+  "basic": {
+    "id": "100123",
+    "name": "Microsoft",
+    "logo": "https://cdn0.iconfinder.com/data/icons/shift-free/32/Microsoft-512.png",
+    "url": "https://microsoft.com",
+    "description": "Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports and sells computer software, consumer electronics, personal computers, and related services.",
+    "domain": "Technology company",
+    "year_founded": "1986",
+    "employee_count": "130,000",
+    "social": [{
+        "type": "facebook",
+        "label": "microsoftglobal",
+        "url": "https://facebook.com/microsoftglobal"
+      },
+      {
+        "type": "twitter",
+        "label": "microsoft-twitter",
+        "url": "https://twitter.com/microsoftglobal"
+      }
+    ],
+    "keyPeople": [{
+        "name": "Bill Gates",
+        "position": "Co-Founder",
+        "image": "https://www.insidermonkey.com/blog/wp-content/uploads/2013/01/01-Bill-Gates.jpg",
+        "link": "https://www.linkedin.com/in/williamhgates"
+      },
+      {
+        "name": "Paul Allen",
+        "position": "Co-Founder",
+        "image": "https://media.licdn.com/dms/image/C4E03AQF5ktLTiMDuBQ/profile-displayphoto-shrink_800_800/0?e=1565827200&v=beta&t=_jHuyLYGp904fS4eleATdI5GDHb2IJ_6abocydJu93c",
+        "link": "https://www.linkedin.com/in/williamhgates"
+      }
+    ]
+  },
+  "business": {
+    "topMetrics": [{
+        "key": "website_traffic",
+        "value": "5,727,000"
+      },
+      {
+        "key": "headquarters",
+        "value": "Redmond, Washington"
+      },
+      {
+        "key": "employee_count",
+        "value": "130,000+"
+      },
+      {
+        "key": "listing_status",
+        "value": "public"
+      }
+    ],
+    "financialMetrics": []
+  },
+  "hr": {
+    "teams": [{
+        "department": "Engineering",
+        "size": 21332
+      },
+      {
+        "department": "Sales",
+        "size": 8042
+      },
+      {
+        "department": "Support",
+        "size": 32349
+      }
+    ],
+    "topEmployeesDistribution": [{
+        "designation": "c-suite",
+        "count": 5
+      },
+      {
+        "designation": "director",
+        "count": 10
+      },
+      {
+        "designation": "vp",
+        "count": 15
+      }
+    ]
+  },
+  "tech": {
+    "softwares": [{
+        "name": "Google Publisher Tag",
+        "image": "https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip",
+        "description": "Google Publisher Tag (GPT) is an ad tagging library with which you can dynamically build ad requests.",
+        "type": "free",
+        "tags": [{
+            "label": "A/B Testing",
+            "link": "/softwares/category/a-b-testing"
+          },
+          {
+            "label": "Javascript Library",
+            "link": "/softwares/category/js-library"
+          }
+        ]
+      },
+      {
+        "name": "Google Fonts",
+        "image": "https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip",
+        "description": "Google Publisher Tag (GPT) is an ad tagging library with which you can dynamically build ad requests.",
+        "type": "paid",
+        "tags": [{
+            "label": "A/B Testing",
+            "link": "/softwares/category/a-b-testing"
+          },
+          {
+            "label": "Javascript Library",
+            "link": "/softwares/category/js-library"
+          }
+        ]
+      }
+    ]
+  }
+}

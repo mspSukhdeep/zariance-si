@@ -1,5 +1,5 @@
 <template>
-  <div class="columns">
+  <div class="columns coming-soon">
     <div class="column is-3">
       <CategoryNavigation v-for="(navItem, index) in categories" :key="index" :nav="navItem"/>
     </div>
@@ -143,5 +143,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang="sass">
+
 </style>

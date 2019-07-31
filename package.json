@@ -28,7 +28,10 @@
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-material-design-icons": "^1.0.4",
-    "vue-chartjs": "^3.4.2"
+    "query-string": "^6.8.2",
+    "vue-chartjs": "^3.4.2",
+    "vue2-perfect-scrollbar": "^1.2.1",
+    "vuejs-paginate": "^2.1.0"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",

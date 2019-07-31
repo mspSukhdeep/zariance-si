@@ -2,19 +2,19 @@
     <div class="widget">
         <div class="widget-head columns">
             <div class="widget-col column is-6">
-                {{data.attributes[0].label}}
+                Designation
             </div>
             <div class="widget-col column is-6 has-text-right">
-                {{data.attributes[1].label}}
+                Employee Count
             </div>
         </div>
         <div class="widget-body">
-            <div class="widget__row columns" v-for="(item, index) in data.rows" :key="index">
+            <div class="widget__row columns" v-for="(item, index) in data" :key="index">
                 <div class="widget-col column is-6">
-                    {{item[data.attributes[0].selector]}}
+                    {{item.department}}
                 </div>
                 <div class="widget-col column is-6 has-text-right">
-                    {{item[data.attributes[1].selector]}}
+                    {{item.size}}
                 </div>
             </div>
         </div>

@@ -1,0 +1,206 @@
+{
+  "total": 2698289,
+  "from": 0,
+  "size": 20,
+  "companies": [{
+    "month_6": 4294967295,
+    "hq_location": "BEIJING, China",
+    "softwares": [""],
+    "name": "BAIDU",
+    "foundation_year": "2000",
+    "total_softwares": 0,
+    "l2s": [""],
+    "url": "baidu.com",
+    "l1s": [""]
+  }, {
+    "month_6": 4294967295,
+    "hq_location": "MOUNTAIN VIEW, CA, United States",
+    "softwares": [""],
+    "name": "mail.google.com",
+    "foundation_year": "1998",
+    "total_softwares": 0,
+    "l2s": [""],
+    "url": "mail.google.com",
+    "l1s": [""]
+  }, {
+    "month_6": 4294967295,
+    "hq_location": "BEIJING, China",
+    "softwares": ["mediaV"],
+    "name": "m.baidu.com",
+    "foundation_year": "2000",
+    "total_softwares": 1,
+    "l2s": [""],
+    "url": "m.baidu.com",
+    "l1s": ["ads"]
+  }, {
+    "month_6": 4294967295,
+    "hq_location": "MOUNTAIN VIEW, CA, United States",
+    "softwares": ["google", "Google Analytics", "Google-Maps", "Google-Ad-Partner-Services", "Google-API", "Google Fonts", "GoogleTagManager", "GStatic-Google-Static-Content", "YouTube", "DoubleClick-Mobile", "DoubleClick.Net"],
+    "name": "Google",
+    "foundation_year": "1998",
+    "total_softwares": 11,
+    "l2s": ["Cloud_PaaS", "US_hosting", "Application_Performance", "Audience_Measurement", "Visitor_Count_Tracking", "Maps", "Tag_Management", "CDN_technologies_Web", "Live_Stream_\/_Webcast", "Online_Video_Platform", "Social_Video_Platform"],
+    "url": "google.com",
+    "l1s": ["hosting", "analytics", "mapping", "ads", "encoding", "javascript", "widgets", "cdn", "media"]
+  }, {
+    "month_6": 4294967295,
+    "hq_location": "MENLO PARK, CA, United States",
+    "softwares": [""],
+    "name": "Facebook",
+    "foundation_year": "2004",
+    "total_softwares": 0,
+    "l2s": [""],
+    "url": "facebook.com",
+    "l1s": [""]
+  }, {
+    "month_6": 4294967295,
+    "hq_location": "SAN FRANCISCO, CA, United States",
+    "softwares": ["creativecommons", "Widgipedia-Widget"],
+    "name": "WI-08",
+    "foundation_year": "2003",
+    "total_softwares": 2,
+    "l2s": [""],
+    "url": "wikipedia.org",
+    "l1s": ["docinfo", "widgets"]
+  }, {
+    "month_6": 4294967295,
+    "hq_location": "SAN BRUNO, CA, United States",
+    "softwares": ["google", "Google Analytics", "Google-API", "Google Fonts", "GoogleTagManager", "GStatic-Google-Static-Content", "YouTube"],
+    "name": "YouTube",
+    "foundation_year": "2005",
+    "total_softwares": 7,
+    "l2s": ["Cloud_PaaS", "US_hosting", "Application_Performance", "Audience_Measurement", "Visitor_Count_Tracking", "Tag_Management", "CDN_technologies_Web", "Live_Stream_\/_Webcast", "Online_Video_Platform", "Social_Video_Platform"],
+    "url": "YouTube.com",
+    "l1s": ["hosting", "analytics", "encoding", "javascript", "widgets", "cdn", "media"]
+  }, {
+    "month_6": 4181431288,
+    "hq_location": "MOUNTAIN VIEW, CA, United States",
+    "softwares": ["google", "Google Fonts", "GStatic-Google-Static-Content"],
+    "name": "accounts.google.com",
+    "foundation_year": "1998",
+    "total_softwares": 3,
+    "l2s": ["Cloud_PaaS", "US_hosting", "CDN_technologies_Web"],
+    "url": "accounts.google.com",
+    "l1s": ["hosting", "javascript", "cdn"]
+  }, {
+    "month_6": 4110326939,
+    "hq_location": "MOUNTAIN VIEW, CA, United States",
+    "softwares": [""],
+    "name": "googleadservices.com",
+    "foundation_year": "2015",
+    "total_softwares": 0,
+    "l2s": [""],
+    "url": "googleadservices.com",
+    "l1s": [""]
+  }, {
+    "month_6": 3972314305,
+    "hq_location": "SUNNYVALE, CA, United States",
+    "softwares": ["yahoo"],
+    "name": "BrightRoll Ad Exchange",
+    "foundation_year": "1994",
+    "total_softwares": 1,
+    "l2s": [""],
+    "url": "yahoo.com",
+    "l1s": ["hosting"]
+  }, {
+    "month_6": 3934593896,
+    "hq_location": "SAN FRANCISCO, CA, United States",
+    "softwares": [""],
+    "name": "Twitter",
+    "foundation_year": "2007",
+    "total_softwares": 0,
+    "l2s": [""],
+    "url": "twitter.com",
+    "l1s": [""]
+  }, {
+    "month_6": 3326763413,
+    "hq_location": "",
+    "softwares": ["getrespond", "google", "Google Analytics", "Google-API", "Google Fonts", "hupso", "micropoll", "Tableau", "Tumblr", "Twitter-Analytics", "zendesk", "DoubleClick.Net", "TrafficJunky", "WordPress"],
+    "name": "pornhub.com",
+    "foundation_year": null,
+    "total_softwares": 14,
+    "l2s": ["Cloud_PaaS", "US_hosting", "Application_Performance", "Audience_Measurement", "Visitor_Count_Tracking", "Blog", "Conversion_Optimization", "CRM", "Ticketing_System", "Open_Source"],
+    "url": "pornhub.com",
+    "l1s": ["widgets", "hosting", "analytics", "encoding", "javascript", "cms", "mx", "ads"]
+  }, {
+    "month_6": 3117426955,
+    "hq_location": "SAN FRANCISCO, CA, United States",
+    "softwares": [""],
+    "name": "Instagram",
+    "foundation_year": "2010",
+    "total_softwares": 0,
+    "l2s": [""],
+    "url": "instagram.com",
+    "l1s": [""]
+  }, {
+    "month_6": 3082053794,
+    "hq_location": "Moscow, Moscow, Russian Federation",
+    "softwares": ["google", "yandex"],
+    "name": "Yandex",
+    "foundation_year": "2000",
+    "total_softwares": 2,
+    "l2s": ["Cloud_PaaS", "US_hosting"],
+    "url": "yandex.ru",
+    "l1s": ["hosting", "ads"]
+  }, {
+    "month_6": 2988696589,
+    "hq_location": "",
+    "softwares": [""],
+    "name": "11x",
+    "foundation_year": null,
+    "total_softwares": 0,
+    "l2s": [""],
+    "url": "xvideos.com",
+    "l1s": [""]
+  }, {
+    "month_6": 2923188259,
+    "hq_location": "MOUNTAIN VIEW, CA, United States",
+    "softwares": ["google", "Google Fonts", "GStatic-Google-Static-Content"],
+    "name": "docs.google.com",
+    "foundation_year": "1998",
+    "total_softwares": 3,
+    "l2s": ["Cloud_PaaS", "US_hosting", "CDN_technologies_Web"],
+    "url": "docs.google.com",
+    "l1s": ["hosting", "javascript", "cdn"]
+  }, {
+    "month_6": 2719130540,
+    "hq_location": "MNSTER, Germany",
+    "softwares": [""],
+    "name": "m.wikipedia.org",
+    "foundation_year": null,
+    "total_softwares": 0,
+    "l2s": [""],
+    "url": "m.wikipedia.org",
+    "l1s": [""]
+  }, {
+    "month_6": 2575513357,
+    "hq_location": "",
+    "softwares": ["Google Fonts"],
+    "name": "ampproject.org",
+    "foundation_year": null,
+    "total_softwares": 1,
+    "l2s": [""],
+    "url": "ampproject.org",
+    "l1s": ["javascript"]
+  }, {
+    "month_6": 2558903598,
+    "hq_location": "NEW YORK, NY, United States",
+    "softwares": [""],
+    "name": "doubleclick.net",
+    "foundation_year": "1996",
+    "total_softwares": 0,
+    "l2s": [""],
+    "url": "doubleclick.net",
+    "l1s": [""]
+  }, {
+    "month_6": 2545222034,
+    "hq_location": "",
+    "softwares": [""],
+    "name": "xnxx.com",
+    "foundation_year": null,
+    "total_softwares": 0,
+    "l2s": [""],
+    "url": "xnxx.com",
+    "l1s": [""]
+  }]
+}

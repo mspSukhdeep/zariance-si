@@ -3,7 +3,7 @@
         <nuxt-link
             :to="item.link" 
             class="pill"
-            :class="{'pill--active': item.isActive}"
+            :class="{'pill--active': item.isActive, 'pill--disabled': item.disabled}"
             v-for="(item, index) in route" 
             :key="index">
             {{item.label}}
@@ -32,6 +32,8 @@ export default {
         background-color: #fafafa
         color: #5f6368
         text-decoration: none
+    &--disabled
+        opacity: .5
     &.nuxt-link-exact-active
         box-shadow: 0 1px 3px 1px rgba(60, 64, 67, 0.15), 0 1px 2px 0 rgba(60, 64, 67, 0.3)
         color: #1a73e8

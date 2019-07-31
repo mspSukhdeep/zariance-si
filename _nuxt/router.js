@@ -2,13 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _2a105ae1 = () => interopDefault(import('../pages/list.vue' /* webpackChunkName: "pages/list" */))
 const _63451053 = () => interopDefault(import('../pages/companies/_companies.vue' /* webpackChunkName: "pages/companies/_companies" */))
 const _8caa66d4 = () => interopDefault(import('../pages/companies/_companies/index.vue' /* webpackChunkName: "pages/companies/_companies/index" */))
+const _1233a8ac = () => interopDefault(import('../pages/companies/_companies/business.vue' /* webpackChunkName: "pages/companies/_companies/business" */))
 const _3ec78ff6 = () => interopDefault(import('../pages/companies/_companies/hr.vue' /* webpackChunkName: "pages/companies/_companies/hr" */))
 const _31fe0782 = () => interopDefault(import('../pages/companies/_companies/news.vue' /* webpackChunkName: "pages/companies/_companies/news" */))
-const _338c1a82 = () => interopDefault(import('../pages/companies/_companies/tech.vue' /* webpackChunkName: "pages/companies/_companies/tech" */))
 const _653fe667 = () => interopDefault(import('../pages/search/_term.vue' /* webpackChunkName: "pages/search/_term" */))
-const _61dd1232 = () => interopDefault(import('../pages/technologies/_technologies.vue' /* webpackChunkName: "pages/technologies/_technologies" */))
 const _336f811f = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 Vue.use(Router)
@@ -86,12 +86,20 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
+      path: "/list",
+      component: _2a105ae1,
+      name: "list"
+    }, {
       path: "/companies/:companies?",
       component: _63451053,
       children: [{
         path: "",
         component: _8caa66d4,
         name: "companies-companies"
+      }, {
+        path: "business",
+        component: _1233a8ac,
+        name: "companies-companies-business"
       }, {
         path: "hr",
         component: _3ec78ff6,
@@ -100,19 +108,11 @@ export function createRouter() {
         path: "news",
         component: _31fe0782,
         name: "companies-companies-news"
-      }, {
-        path: "tech",
-        component: _338c1a82,
-        name: "companies-companies-tech"
       }]
     }, {
       path: "/search/:term?",
       component: _653fe667,
       name: "search-term"
-    }, {
-      path: "/technologies/:technologies?",
-      component: _61dd1232,
-      name: "technologies-technologies"
     }, {
       path: "/",
       component: _336f811f,
