@@ -21,7 +21,7 @@
     "@nuxtjs/pwa": "^2.6.0",
     "bulma": "^0.7.5",
     "chance": "^1.0.18",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "chartjs-plugin-datalabels": "^0.6.0",
     "compromise": "^11.13.2",
     "lodash": "^4.17.11",
